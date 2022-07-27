@@ -9,8 +9,8 @@ import pymongo
 # --------------- CONNECTO MONGO: Uses st.experimental_singleton to only run once ---------------
 @st.experimental_singleton
 def init_connection():
-    return pymongo.MongoClient("mongodb://looming:012345@147.83.48.118/ProbaConn") #"mongodb://xxxxxxxxxx:yyyyy/" on xxx... = ip públic del ordi al q es connecta // yy = port on esta el mongodb
-    #"mongodb://looming:012345@123.45.67.89/ProbaConn"
+    return pymongo.MongoClient("mongodb://looming:012345@147.83.48.118/?authMechanism=DEFAULT/ProbaConn") #"mongodb://xxxxxxxxxx:yyyyy/" on xxx... = ip públic del ordi al q es connecta // yy = port on esta el mongodb
+    #"mongodb://looming:012345@147.83.48.118/ProbaConn"
     #"mongodb://147.83.48.118:27017/"
 try:
     client = init_connection()
