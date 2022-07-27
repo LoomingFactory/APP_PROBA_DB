@@ -14,6 +14,7 @@ def init_connection():
     #"mongodb://147.83.48.118:27017/"
 try:
     client = init_connection()
+    st.info("s'ha connectat correctament a la base de dades")
 except pymongo.errors.ServerSelectionTimeoutError as errorTiempo:
     st.error("Temps de connexio al MongoDB excedit. Temps: "+errorTiempo)
 except pymongo.errors.ConnectionFailure as errorConexion:
