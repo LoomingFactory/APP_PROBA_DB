@@ -27,7 +27,6 @@ except pymongo.errors.InvalidURI as errorURI:
 except pymongo.errors.PyMongoError as errorPyMongo:
     st.error("Error de PyMongo. Error: "+errorPyMongo)
 
-st.info("s'ha connectat correctament a la base de dades")
 
 
 
