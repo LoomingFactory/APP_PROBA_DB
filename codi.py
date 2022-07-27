@@ -9,12 +9,11 @@ import pymongo
 # --------------- CONNECTO MONGO: Uses st.experimental_singleton to only run once ---------------
 @st.experimental_singleton
 def init_connection():
-    return pymongo.MongoClient("mongodb://looming:012345@147.83.48.118/ProbaConn") #"mongodb://xxxxxxxxxx:yyyyy/" on xxx... = ip públic del ordi al q es connecta // yy = port on esta el mongodb
+    return pymongo.MongoClient("mongodb://looming:012345@123.45.67.89/ProbaConn") #"mongodb://xxxxxxxxxx:yyyyy/" on xxx... = ip públic del ordi al q es connecta // yy = port on esta el mongodb
     #"mongodb://looming:012345@123.45.67.89/ProbaConn"
     #"mongodb://147.83.48.118:27017/"
 try:
     client = init_connection()
-    st.info("s'ha connectat correctament a la base de dades")
 except pymongo.errors.ServerSelectionTimeoutError as errorTiempo:
     st.error("Temps de connexio al MongoDB excedit. Temps: "+errorTiempo)
 except pymongo.errors.ConnectionFailure as errorConexion:
@@ -27,6 +26,8 @@ except pymongo.errors.InvalidURI as errorURI:
     st.error("Error de URI de MongoDB. Error: "+errorURI)
 except pymongo.errors.PyMongoError as errorPyMongo:
     st.error("Error de PyMongo. Error: "+errorPyMongo)
+
+st.info("s'ha connectat correctament a la base de dades")
 
 
 
